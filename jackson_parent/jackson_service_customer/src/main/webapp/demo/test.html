@@ -8,19 +8,20 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
-    <script src="../myPa/axios-0.18.0.js"></script>
-    <!--<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">-->
-    <link rel="stylesheet" href="../myPa/font-awesome.min.css">
-    <link rel="stylesheet" href="../myPa/index.css">
-    <script src="../myPa/index.js"></script>
-    <script src="../myPa/jquery.min.js"></script>
-    <link rel="stylesheet" href="../myPa/style.css">
-    <script src="../myPa/vue.js"></script>
+    <!-- 引入ElementUI样式 -->
+    <link rel="stylesheet" href="../css/mycss.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!--<script src="https://unpkg.com/vue/dist/vue.js"></script>-->
+    <script src="../js/vue2.js"></script>
+    <!-- 引入ElementUI组件库 -->
+    <!--<script src="https://unpkg.com/element-ui/lib/index.js"></script>-->
+    <script src="../js/index2.js"></script>
 </head>
 
 <body>
 <div id="app">
-    <el-button @click="handleAdd()">Button</el-button>
+    <!--<el-button @click="handleAdd()">Button</el-button>-->
+    <el-button round @click="handleAdd()" type="primary">Button</el-button>
 </div>
 </body>
 </html>
