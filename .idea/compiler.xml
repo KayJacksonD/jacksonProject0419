@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="gateway-api" />
+        <module name="jackson_eureka" />
+        <module name="jackson_service_customer" />
+        <module name="jackson_service_provider" />
+        <module name="jackson_service_workFlow" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="jackson_gateway" target="1.7" />
+      <module name="jackson_registry" target="1.7" />
+      <module name="jackson_service_gateway" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
