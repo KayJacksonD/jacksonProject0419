@@ -27,15 +27,17 @@
                     active-text-color="#ffd04b">
                 <!--<el-menu-item index="1"><a href="index.html">why Kay.Jackson.D</a></el-menu-item>-->
                 <el-menu-item>
-                    <a href="index.html"><el-avatar :size="40" :src="circleUrl"></el-avatar></a>
+                    <a href="index.html">
+                        <el-avatar :size="40" :src="circleUrl"></el-avatar>
+                    </a>
                 </el-menu-item>
                 <el-submenu index="1">
                     <template slot="title">Why Kay.Jackson.D ?</template>
-                    <el-menu-item index="1-1">选项1</el-menu-item>
-                    <el-menu-item index="1-2">选项2</el-menu-item>
+                    <el-menu-item index="1-1">What's Flesh</el-menu-item>
+                    <el-menu-item index="1-2">About Jackson</el-menu-item>
                 </el-submenu>
                 <el-submenu index="2">
-                    <template slot="title">我的工作台</template>
+                    <template slot="title">My WorkSpace</template>
                     <el-menu-item index="2-1">选项1</el-menu-item>
                     <el-menu-item index="2-2">选项2</el-menu-item>
                     <el-menu-item index="2-3">选项3</el-menu-item>
@@ -47,18 +49,19 @@
                     </el-submenu>
                 </el-submenu>
                 <!--置灰样式disabled-->
-                <el-menu-item index="3">消息中心</el-menu-item>
-                <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">系统管理</a></el-menu-item>
+                <el-menu-item index="3">Message</el-menu-item>
+                <el-menu-item index="4"><a target="_blank">Account</a></el-menu-item>
                 <el-menu-item>
-                    <el-input placeholder="请输入内容" v-model="input3" class="input-with-select">
-                        <el-button slot="append" icon="el-icon-search"></el-button>
+                    <el-input placeholder="Search" v-model="input3" class="input-with-select">
+                        <i class="el-icon-search" slot="append"></i>
                     </el-input>
                 </el-menu-item>
                 <el-menu-item>
                     <el-button type="text" size="medium">sin in</el-button>
                 </el-menu-item>
                 <el-menu-item>
-                    <el-button roundsize="medium">sin up</el-button>
+                    <i class="el-icon-switch-button"></i>
+                    <!--<el-button roundsize="medium">Exit Jackson</el-button>-->
                 </el-menu-item>
 
         </el-header>
@@ -78,7 +81,9 @@
                                 </template>
                                 <template v-for="child in menu.children">
                                     <el-menu-item :index="child.path">
-                                        <a :href="child.linkUrl" target="right" style="color: black">{{child.title}}</a>
+                                        <a :href="child.linkUrl" target="right" style="color: black">
+                                            <i class="el-icon-s-fold" :class="menu.icon"></i>{{child.title}}
+                                        </a>
                                     </el-menu-item>
                                 </template>
                             </el-submenu>
@@ -111,7 +116,7 @@
             menuList: [
                 {
                     "path": "1",
-                    "title": "我的菜单",
+                    "title": "My Menu",
                     "icon": "el-menu-vertical-demo",
                     "children": [
                         {
@@ -136,7 +141,7 @@
                 },
                 {
                     "path": "2",
-                    "title": "系统菜单",
+                    "title": "System Menu",
                     "icon": "fa-user-md",
                     "children": [
                         {
