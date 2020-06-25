@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WorkFlow</title>
+</head>
+<!-- 引入ElementUI样式 -->
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- 引入ElementUI组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<body>
+<div id="app">
+    <template>
+        <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
+            <el-tab-pane label="我的代办" name="first">我的代办</el-tab-pane>
+            <el-tab-pane label="我的申请" name="second">我的申请</el-tab-pane>
+            <el-tab-pane label="我的历史" name="third">我的历史</el-tab-pane>
+        </el-tabs>
+    </template>
+</div>
+</body>
+</html>
+<script>
+    var vue = new Vue({
+        el: "#app",
+        data: {
+            activeName: 'first'
+        },
+        methods: {
+            handleClick(tab, event) {
+                console.log(tab, event);
+            }
+        }
+    })
+</script>

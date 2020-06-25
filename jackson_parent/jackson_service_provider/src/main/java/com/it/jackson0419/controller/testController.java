@@ -25,7 +25,8 @@ public class testController {
 
     @GetMapping(value = "/findById/{id}")
     public void function2(@PathVariable int id) {
-        User user = testService.findById(id);
-        System.out.println(user);
+//        User user = testService.findById(id);
+//        System.out.println(user);
+        System.out.println("1550");
     }
 }

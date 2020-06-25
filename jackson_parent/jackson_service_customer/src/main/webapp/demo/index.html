@@ -5,6 +5,7 @@
     <title>Title</title>
 </head>
 <!-- 引入ElementUI样式 -->
+<link rel="stylesheet" href="../css/mycss.css">
 <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 <!--<script src="https://unpkg.com/vue/dist/vue.js"></script>-->
 <script src="../js/vue2.js"></script>
@@ -15,15 +16,24 @@
 <div id="app">
     <el-container>
         <el-header>
+            <!--:default-active="activeIndex2"
+            @select="handleSelect"
+            class="el-menu-demo"-->
             <el-menu
-                    :default-active="activeIndex2"
-                    class="el-menu-demo"
+
                     mode="horizontal"
-                    @select="handleSelect"
-                    background-color="#545c64"
+                    background-color="#000000"
                     text-color="#fff"
                     active-text-color="#ffd04b">
-                <el-menu-item index="1"><a href="index.html">Kay.Jackson.D</a></el-menu-item>
+                <!--<el-menu-item index="1"><a href="index.html">why Kay.Jackson.D</a></el-menu-item>-->
+                <el-menu-item>
+                    <el-avatar :size="40" :src="circleUrl"></el-avatar>
+                </el-menu-item>
+                <el-submenu index="1">
+                    <template slot="title">Why Kay.Jackson.D?</template>
+                    <el-menu-item index="1-1">选项1</el-menu-item>
+                    <el-menu-item index="1-2">选项2</el-menu-item>
+                </el-submenu>
                 <el-submenu index="2">
                     <template slot="title">我的工作台</template>
                     <el-menu-item index="2-1">选项1</el-menu-item>
@@ -39,7 +49,18 @@
                 <!--置灰样式disabled-->
                 <el-menu-item index="3">消息中心</el-menu-item>
                 <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">系统管理</a></el-menu-item>
-            </el-menu>
+                <el-menu-item>
+                    <el-input placeholder="请输入内容" v-model="input3" class="input-with-select">
+                        <el-button slot="append" icon="el-icon-search"></el-button>
+                    </el-input>
+                </el-menu-item>
+                <el-menu-item>
+                    <el-button type="text" size="medium">sin in</el-button>
+                </el-menu-item>
+                <el-menu-item>
+                    <el-button roundsize="medium">sin up</el-button>
+                </el-menu-item>
+
         </el-header>
         <el-container>
             <!--Aside-->
@@ -47,37 +68,9 @@
                 <el-row class="tac">
                     <el-col :span="20">
                         <h5></h5>
-                        <!--<el-menu
-                                default-active="2"
-                                class="el-menu-vertical-demo"
-                                @open="handleOpen"
-                                @close="handleClose">
-
-                            &lt;!&ndash;导航一&ndash;&gt;
-                            <el-submenu index="1">
-                                <template slot="title">
-                                    <i class="el-icon-location"></i>
-                                    <span>导航一</span>
-                                </template>
-                                <el-submenu index="1-1">
-                                    <template slot="title">普通菜单</template>
-                                    <el-menu-item index="1-1-1">
-                                        <a href="04.Table.html" target="right">选项1</a>
-                                    </el-menu-item>
-                                </el-submenu>
-                                <el-submenu index="1-2">
-                                    <template slot="title">核心菜单</template>
-                                    <el-menu-item index="1-2-2">选项1</el-menu-item>
-                                </el-submenu>
-                            </el-submenu>
-
-
-                            <el-menu-item index="4">
-                                <i class="el-icon-setting"></i>
-                                <span slot="title">导航四</span>
-                            </el-menu-item>
-                        </el-menu>-->
-                        <el-menu>
+                        <el-menu
+                                background-color="#b3d9ff"
+                                text-color="#000000">
                             <el-submenu v-for="menu in menuList" :index="menu.path">
                                 <template slot="title">
                                     <i class="el-icon-location" :class="menu.icon"></i>
@@ -113,6 +106,8 @@
         el: "#app",
         data: {
             visible: false,
+            circleUrl: "../img/user8-128x128.jpg",
+
             menuList: [
                 {
                     "path": "1",
@@ -127,19 +122,20 @@
                     "children": [
                         {
                             "path": "/2-1",
-                            "title": "菜单一",
-                            "linkUrl": "member.html",
+                            "title": "选项一",
+                            "linkUrl": "04.Table.html",
                             "children": []
                         },
                         {
                             "path": "/2-2",
-                            "title": "菜单二",
+                            "title": "选项二",
+                            "linkUrl": "test.html",
                             "children": []
                         },
                         {
                             "path": "/2-3",
-                            "title": "菜单三",
-                            "linkUrl": "all-item-list.html",
+                            "title": "选项三",
+                            "linkUrl": "workFlow.html",
                             "children": []
                         },
                     ]
@@ -151,7 +147,7 @@
 </script>
 <style>
     .el-header {
-        background-color: #545c64;
+        background-color: #000000;
         color: #333;
         text-align: center;
         /*line-height: 1px;*/
@@ -165,7 +161,7 @@
     }
 
     .el-aside {
-        background-color: #FFFFFF;
+        background-color: #f7e8ba;
         color: #333;
         text-align: left;
         /*width: 10px;*/
@@ -229,3 +225,24 @@
         text-decoration: none;
     }
 </style>
+<style>
+    .el-select .el-input {
+        width: 130px;
+    }
+
+    .input-with-select .el-input-group__prepend {
+        background-color: #fff;
+    }
+</style>
+<script>
+    export default {
+        data() {
+            return {
+                input1: '',
+                input2: '',
+                input3: '',
+                select: ''
+            }
+        }
+    }
+</script>

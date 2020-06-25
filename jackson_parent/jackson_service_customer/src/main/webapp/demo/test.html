@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 页面meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
+    <script src="../myPa/axios-0.18.0.js"></script>
+    <!--<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">-->
+    <link rel="stylesheet" href="../myPa/font-awesome.min.css">
+    <link rel="stylesheet" href="../myPa/index.css">
+    <script src="../myPa/index.js"></script>
+    <script src="../myPa/jquery.min.js"></script>
+    <link rel="stylesheet" href="../myPa/style.css">
+    <script src="../myPa/vue.js"></script>
+</head>
+
+<body>
+<div id="app">
+    <el-button @click="handleAdd()">Button</el-button>
+</div>
+</body>
+</html>
+<script>
+    var vue = new Vue({
+        el: "#app",
+        data: {
+            visible: false,
+            id: 10
+        },
+        methods: {
+            test() {
+                alert("123");
+            },
+            //添加
+            handleAdd() {
+                alert("123456");
+                axios.get("http://localhost:10080/customer/customer/findById?id=" + this.id)
+            }
+        }
+    })
+</script>
