@@ -11,8 +11,8 @@
 <!--<script src="https://unpkg.com/vue/dist/vue.js"></script>-->
 <script src="../js/vue2.js"></script>
 <!-- 引入ElementUI组件库 -->
-<script src="https://unpkg.com/element-ui/lib/index.js"></script>
-<!--<script src="../js/index2.js"></script>-->
+<!--<script src="https://unpkg.com/element-ui/lib/index.js"></script>-->
+<script src="../js/index2.js"></script>
 <body>
 <div id="app">
     <el-container>
@@ -54,13 +54,14 @@
                     </el-input>
                 </el-menu-item>
                 <el-menu-item>
+                    <!--<a :href="child.linkUrl" target="right" style="color: black">
+                        <i class="el-icon-s-fold" :class="menu.icon"></i>{{child.title}}
+                    </a>-->
                     <el-button type="text" size="medium">sin in</el-button>
                 </el-menu-item>
                 <el-menu-item>
                     <i class="el-icon-switch-button"></i>
-                    <!--<el-button roundsize="medium">Exit Jackson</el-button>-->
                 </el-menu-item>
-
         </el-header>
         <el-container>
             <!--Aside-->
@@ -107,19 +108,16 @@
     var vue = new Vue({
         el: "#app",
         data: {
-            userId: 6261019,
+            userId: 6261754,
             visible: false,
             circleUrl: "../img/user8-128x128.jpg",
-            menuList: []
+            menuList: [],
+            sinInValue: ''
         },
         created() {
             this.initMenu();
         },
         methods: {
-            /*initMenu() {
-                // alert("123456");
-                axios.post("http://localhost:10081/menuController/getMenuList", this.user)
-            },*/
             initMenu() {
                 var params = {
                     "userId": this.userId
