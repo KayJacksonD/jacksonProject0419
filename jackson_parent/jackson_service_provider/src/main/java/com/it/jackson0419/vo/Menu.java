@@ -11,7 +11,8 @@ import java.util.*;
 @Data
 public class Menu implements Serializable{
     private Integer id;
-    private String name; // 菜单名称
+    private Integer menuCode;
+    private String title; // 菜单名称
     private String linkUrl; // 访问路径
     private String path;//菜单项所对应的路由路径
     private Integer priority; // 优先级（用于排序）

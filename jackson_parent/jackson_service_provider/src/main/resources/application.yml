@@ -5,7 +5,7 @@ spring:
     name: jackson-provider
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/jacksonProject?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    url: jdbc:mysql://127.0.0.1:3306/kayjacksond?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
     username: root
     password: root
 eureka:
