@@ -1,46 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <!-- 页面meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" name="viewport">
-    <!-- 引入ElementUI样式 -->
-    <link rel="stylesheet" href="../css/mycss.css">
-    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-    <!--<script src="https://unpkg.com/vue/dist/vue.js"></script>-->
-    <script src="../js/vue2.js"></script>
-    <!-- 引入ElementUI组件库 -->
-    <!--<script src="https://unpkg.com/element-ui/lib/index.js"></script>-->
-    <script src="../js/index2.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 </head>
-
 <body>
 <div id="app">
-    <!--<el-button @click="handleAdd()">Button</el-button>-->
-    <el-button round @click="handleAdd()" type="primary">Button</el-button>
+    <router-link to="/home">Home</router-link>
+    <router-link to="/about">About</router-link>
+    <div>
+        <router-view></router-view>
+    </div>
 </div>
-</body>
-</html>
 <script>
-    var vue = new Vue({
-        el: "#app",
-        data: {
-            visible: false,
-            id: 10
-        },
-        methods: {
-            test() {
-                alert("123");
-            },
-            //添加
-            handleAdd() {
-                alert("123456");
-                axios.get("http://localhost:10080/customer/customer/findById?id=" + this.id)
+    var Home = Vue.extend({
+        template: '<div><h1>Home</h1><p>{{msg}}</p></div>',
+        data: function () {
+            return {
+                msg: 'Hello, vue router!'
             }
         }
     })
+    /*var About = Vue.extend({
+        template: '<div><h1>About</h1><p>This is the tutorial about vue-router.</p></div>'
+    })*/
+    const routes = [{
+        path: '/home',
+        component: Home
+    }/*,
+        {
+            path: '/about',
+            component: About
+        }*/
+    ]
+    const router = new VueRouter({
+        routes
+    })
+    const app = new Vue({
+        router
+    }).$mount('#app')
 </script>
+</body>
+</html>

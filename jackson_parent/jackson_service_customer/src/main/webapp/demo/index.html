@@ -8,10 +8,10 @@
 <!-- 引入ElementUI样式 -->
 <link rel="stylesheet" href="../css/mycss.css">
 <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
-<!--<script src="https://unpkg.com/vue/dist/vue.js"></script>-->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
 <script src="../js/vue2.js"></script>
 <!-- 引入ElementUI组件库 -->
-<!--<script src="https://unpkg.com/element-ui/lib/index.js"></script>-->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
 <script src="../js/index2.js"></script>
 <body>
 <div id="app">
@@ -54,13 +54,16 @@
                     </el-input>
                 </el-menu-item>
                 <el-menu-item>
-                    <!--<a :href="child.linkUrl" target="right" style="color: black">
-                        <i class="el-icon-s-fold" :class="menu.icon"></i>{{child.title}}
-                    </a>-->
-                    <el-button type="text" size="medium">sin in</el-button>
+                    <!--<el-button type="text" size="medium">sin in</el-button>-->
+                    <!--<input @click="sinIn()" value="sin in" type="button">-->
+                    <a href="login.html">
+                        <el-button type="text" size="medium">sin in</el-button>
+                    </a>
                 </el-menu-item>
                 <el-menu-item>
-                    <i class="el-icon-switch-button"></i>
+                    <a href="index.html">
+                        <i class="el-icon-switch-button"></i>
+                    </a>
                 </el-menu-item>
         </el-header>
         <el-container>
@@ -92,13 +95,12 @@
             <el-container>
                 <!--main-->
                 <el-main>
-                    <iframe name="right" src="welcom.html" frameborder="0" width="100%" height="580px"
+                    <iframe name="right" src="welcome.html" frameborder="0" width="100%" height="580px"
                             scrolling="no"></iframe>
                     <!--Footer-->
                     <!--<el-footer></el-footer>-->
                 </el-main>
             </el-container>
-
         </el-container>
     </el-container>
 </div>
@@ -108,13 +110,15 @@
     var vue = new Vue({
         el: "#app",
         data: {
-            userId: 6261754,
+            userId: '',
             visible: false,
             circleUrl: "../img/user8-128x128.jpg",
             menuList: [],
             sinInValue: ''
         },
         created() {
+            var r = window.location.search.substr(1).split("=");
+            this.userId = r[1];
             this.initMenu();
         },
         methods: {
@@ -131,10 +135,14 @@
                 }.bind(this)).catch(function (error) {
                     alert("catch3");
                 })
+            },
+            sinIn() {
+                alert("123");
             }
         }
     })
 </script>
+
 <style>
     .el-header {
         background-color: #000000;
@@ -160,8 +168,10 @@
     }
 
     .el-main {
+        /*background: url("../img/backImg.jpg");*/
+        /*opacity: 0.3;*/
         background-color: #E9EEF3;
-        color: #333;
+        /*color: #333;*/
         /*text-align: center;*/
         /*line-height: 160px;*/
         width: 100%;

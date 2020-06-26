@@ -3,23 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>login</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 </head>
 <!-- 引入ElementUI样式 -->
+<link rel="stylesheet" href="../css/mycss.css">
 <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 <!-- 引入ElementUI组件库 -->
 <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+
 <body>
-<div id="app" style="width: 200px;margin-top: 100px;margin-left: 45%">
-    <el-select v-model="value" filterable placeholder="请选择">
-        <el-option
-                v-for="item in options"
-                :key="item.value"
-                :label="item.label"
-                :value="item.value">
-        </el-option>
-    </el-select>
-    <el-input placeholder="请输入密码" v-model="input" show-password></el-input>
+<div id="app"
+     style="width: 250px;margin-top: 100px;margin-left: 30%">
+    <div>
+        <el-input
+                placeholder="账号名称："
+                v-model="accountInput"
+                clearable>
+        </el-input>
+        <el-input placeholder="密       码：" v-model="passwordInput" show-password></el-input>
+    </div>
+    <br>
+    <div style="text-align: center">
+        <a href="index.html?accountInput=19580625">
+            <el-button type="danger" plain>sin in</el-button>
+        </a>
+    </div>
 </div>
 </body>
 </html>
@@ -28,26 +38,30 @@
         el: "#app",
         data: {
             visible: false,
-            options: [{
-                value: '选项1',
-                label: '黄金糕'
-            }, {
-                value: '选项2',
-                label: '双皮奶'
-            }, {
-                value: '选项3',
-                label: '蚵仔煎'
-            }, {
-                value: '选项4',
-                label: '龙须面'
-            }, {
-                value: '选项5',
-                label: '北京烤鸭'
-            }],
             value: '',
-            input: ''
+            accountInput: '',
+            passwordInput: ''/*,
+            router: [{
+                path: '/home',
+                component: {
+                    template: '<div><h1>Home</h1><p>{{msg}}</p></div>',
+                    data: function () {
+                        return {
+                            msg: 'Hello, vue router!'
+                        }
+                    }
+                }
+            }]*/
         },
-        methods: {},
+        methods: {
+            /*sinIn() {
+                // alert(this.accountInput);
+                this.$router.push({path: '/', query: {name: 'xy', age: 22}});
+            }*/
+        }
+
 
     })
 </script>
+
+
