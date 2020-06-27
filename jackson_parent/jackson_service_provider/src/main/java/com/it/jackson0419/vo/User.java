@@ -18,6 +18,7 @@ public class User {
     private String name;
     private String cnName;
     private String enName;
+    private String password;
 
     //    @Column(name = "age")
     private int age;

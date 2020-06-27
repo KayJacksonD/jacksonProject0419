@@ -12,11 +12,13 @@
         values(#{code},#{name},#{helpCode},#{sex},#{remark},#{attention})
     </insert>-->
 
-    <!--根据用户查询菜单-->
-    <select id="getMenuList" resultMap="menuMap">
+    <!--根据用户账号密码查询菜单-->
+    <select id="getMenuList" resultMap="menuMap" parameterType="com.it.jackson0419.vo.User">
       SELECT * FROM menu WHERE id IN
 (SELECT menuId FROM role_menu WHERE roleId IN
-(SELECT roleId FROM user_role WHERE userId = #{vo.userId}) )
+(SELECT roleId FROM user_role WHERE userId = (
+SELECT userId FROM USER WHERE enName = #{vo.enName} AND PASSWORD = #{vo.password}
+)) )
     </select>
 
     <resultMap id="menuMap" type="com.it.jackson0419.vo.Menu">
