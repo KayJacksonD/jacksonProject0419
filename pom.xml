@@ -11,7 +11,7 @@
     <modules>
         <module>jackson_parent</module>
     </modules>
-    <!--起步依赖-->
+    <!--起步依赖  -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
