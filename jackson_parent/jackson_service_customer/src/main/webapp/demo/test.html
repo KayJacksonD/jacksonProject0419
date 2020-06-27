@@ -1,43 +1,60 @@
 <html>
 <head>
+    <!-- 引入ElementUI样式 -->
+    <link rel="stylesheet" href="../css/mycss.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
-    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <!-- 引入ElementUI组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 </head>
 <body>
 <div id="app">
-    <router-link to="/home">Home</router-link>
-    <router-link to="/about">About</router-link>
-    <div>
-        <router-view></router-view>
-    </div>
+    <el-row :gutter="0">
+        <el-col class="hidden-md-and-down" :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
+            <div class="grid-content bg-purple"></div>
+        </el-col>
+        <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
+            <div class="grid-content bg-purple-light"></div>
+        </el-col>
+        <el-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
+            <div class="grid-content bg-purple"></div>
+        </el-col>
+        <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
+            <div class="grid-content bg-purple-light"></div>
+        </el-col>
+    </el-row>
 </div>
-<script>
-    var Home = Vue.extend({
-        template: '<div><h1>Home</h1><p>{{msg}}</p></div>',
-        data: function () {
-            return {
-                msg: 'Hello, vue router!'
-            }
-        }
-    })
-    /*var About = Vue.extend({
-        template: '<div><h1>About</h1><p>This is the tutorial about vue-router.</p></div>'
-    })*/
-    const routes = [{
-        path: '/home',
-        component: Home
-    }/*,
-        {
-            path: '/about',
-            component: About
-        }*/
-    ]
-    const router = new VueRouter({
-        routes
-    })
-    const app = new Vue({
-        router
-    }).$mount('#app')
-</script>
 </body>
 </html>
+
+<script>
+    var vue = new Vue({
+        el: "#app",
+        data: {
+            visible: false
+        },
+        methods: {}
+    })
+</script>
+<style>
+    .el-col {
+        border-radius: 4px;
+    }
+
+    .bg-purple-dark {
+        background: #99a9bf;
+    }
+
+    .bg-purple {
+        background: #d3dce6;
+    }
+
+    .bg-purple-light {
+        background: #e5e9f2;
+    }
+
+    .grid-content {
+        border-radius: 4px;
+        min-height: 36px;
+    }
+</style>

@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Kay.Jackson.D</title>
     <script src="../myPa/axios-0.18.0.js"></script>
+    <script src="../js/main.js"></script>
+
 </head>
 <!-- 引入ElementUI样式 -->
 <link rel="stylesheet" href="../css/mycss.css">
@@ -81,6 +83,78 @@
                     </el-col>
                 </el-menu>
             </el-row>
+            <!--响应式布局-->
+            <!--<el-row :gutter="10">
+                <el-menu
+                        mode="horizontal"
+                        background-color="#000000"
+                        text-color="#fff"
+                        active-text-color="#ffd04b">
+                    &lt;!&ndash;
+                    :span="1"
+                    :span="4"
+                    :span="3"
+                    :span="2"
+                    :span="2"
+                    :span="5"
+                    :span="1"
+                    :span="1"&ndash;&gt;
+                    <el-col class="hidden-md-and-down" :lg="1" :xl="1">
+                        <el-menu-item>
+                            <a onclick="playVid()" ondblclick="pauseVid()">
+                                <el-avatar :size="40" :src="circleUrl"></el-avatar>
+                                <video id="video1" width=100% height=100% style="display: none">
+                                    <source src="../mp3/岁月如歌(电视剧《冲上云霄》主题曲)-陈奕迅.mp3" type="video/ogg">
+                                </video>
+                            </a>
+                        </el-menu-item>
+                    </el-col>
+                    <el-col class="hidden-md-and-down" :lg="4" :xl="4">
+                        <el-submenu index="1">
+                            <template slot="title"> Why Kay . Jackson . D ?</template>
+                            <el-menu-item index="1-1">What's Flesh</el-menu-item>
+                            <el-menu-item index="1-2">About Jackson</el-menu-item>
+                        </el-submenu>
+                    </el-col>
+                    <el-col :xs="8" :sm="6" :md="4" :lg="3" :xl="3">
+                        <el-submenu index="2">
+                            <template slot="title">My WorkSpace</template>
+                            <el-menu-item index="2-1">option1</el-menu-item>
+                            <el-submenu index="2-2">
+                                <template slot="title">option2</template>
+                                <el-menu-item index="2-2-1">option1</el-menu-item>
+                            </el-submenu>
+                        </el-submenu>
+                    </el-col>
+                    <el-col :xs="8" :sm="6" :md="4" :lg="2" :xl="2">
+                        <el-menu-item index="3">Message</el-menu-item>
+                    </el-col>
+                    <el-col :xs="8" :sm="6" :md="4" :lg="2" :xl="2">
+                        <el-menu-item index="4"><a target="_blank">Account</a></el-menu-item>
+                    </el-col>
+                    <el-col :xs="8" :sm="6" :md="4" :lg="5" :xl="5">
+                        <el-menu-item>
+                            <el-input placeholder="Search" v-model="input3" class="input-with-select">
+                                <i class="el-icon-search" slot="append"></i>
+                            </el-input>
+                        </el-menu-item>
+                    </el-col>
+                    <el-col :xs="8" :sm="6" :md="4" :lg="1" :xl="1">
+                        <el-menu-item>
+                            <a href="login.html">
+                                <el-button type="text" size="medium">sin in</el-button>
+                            </a>
+                        </el-menu-item>
+                    </el-col>
+                    <el-col :xs="8" :sm="6" :md="4" :lg="1" :xl="1">
+                        <el-menu-item>
+                            <a href="index.html">
+                                <i class="el-icon-switch-button"></i>
+                            </a>
+                        </el-menu-item>
+                    </el-col>
+                </el-menu>
+            </el-row>-->
         </el-header>
         <el-container>
             <!--Aside-->
@@ -123,6 +197,7 @@
 </body>
 </html>
 <script>
+
     var vue = new Vue({
         el: "#app",
         data: {
@@ -237,6 +312,7 @@
     }
 </style>
 <script>
+
     export default {
         data() {
             return {
@@ -301,3 +377,25 @@
         myVideo.pause();
     }
 </script>
+<style>
+    .el-col {
+        border-radius: 4px;
+    }
+
+    .bg-purple-dark {
+        background: #99a9bf;
+    }
+
+    .bg-purple {
+        background: #d3dce6;
+    }
+
+    .bg-purple-light {
+        background: #e5e9f2;
+    }
+
+    .grid-content {
+        border-radius: 4px;
+        min-height: 36px;
+    }
+</style>
