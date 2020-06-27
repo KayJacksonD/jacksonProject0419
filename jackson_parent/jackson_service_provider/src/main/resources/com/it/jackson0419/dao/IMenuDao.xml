@@ -21,6 +21,11 @@ SELECT userId FROM USER WHERE enName = #{vo.enName} AND PASSWORD = #{vo.password
 )) )
     </select>
 
+    <!--获取用户头像-->
+    <select id="getIcon" resultMap="userMap" parameterType="com.it.jackson0419.vo.User">
+      SELECT * FROM USER WHERE enName = #{vo.enName} AND PASSWORD = #{vo.password}
+    </select>
+
     <resultMap id="menuMap" type="com.it.jackson0419.vo.Menu">
         <id column="id" property="id"></id>
         <result column="menuCode" property="menuCode"></result>
@@ -40,7 +45,7 @@ SELECT userId FROM USER WHERE enName = #{vo.enName} AND PASSWORD = #{vo.password
       SELECT * FROM menu WHERE parentMenuId = #{id}
     </select>
 
-    <!--<resultMap id="userMap" type="com.it.jackson0419.vo.User">
+    <resultMap id="userMap" type="com.it.jackson0419.vo.User">
         <id column="id" property="id"></id>
         <result column="userId" property="userId"></result>
         <result column="name" property="name"></result>
@@ -48,9 +53,10 @@ SELECT userId FROM USER WHERE enName = #{vo.enName} AND PASSWORD = #{vo.password
         <result column="enName" property="enName"></result>
         <result column="age" property="age"></result>
         <result column="roleCode" property="roleCode"></result>
+        <result column="icon" property="icon"></result>
         <collection property="roles" column="roleCode"
                     select="getRoleByUserId"></collection>
-    </resultMap>-->
+    </resultMap>
 
 
 </mapper>

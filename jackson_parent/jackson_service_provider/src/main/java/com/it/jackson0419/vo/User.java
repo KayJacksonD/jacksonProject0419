@@ -19,6 +19,7 @@ public class User {
     private String cnName;
     private String enName;
     private String password;
+    private String icon;
 
     //    @Column(name = "age")
     private int age;

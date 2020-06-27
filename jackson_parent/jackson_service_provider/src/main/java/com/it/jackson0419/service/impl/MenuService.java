@@ -20,4 +20,9 @@ public class MenuService implements IMenuService {
     public List<Menu> getMenuList(User user) {
         return menuDao.getMenuList(user);
     }
+
+    @Override
+    public User getIcon(User user) {
+        return menuDao.getIcon(user);
+    }
 }

@@ -27,4 +27,14 @@ public class MenuController {
         List<Menu> menuList = menuService.getMenuList(user);
         return ResultUtil.returnResult(menuList);
     }
+
+    /**
+     * 获取用户头像
+     * http://localhost:18081/test
+     */
+    @PostMapping(value = "/getIcon")
+    public ResultVO getIcon(@RequestBody User user) {
+        user = menuService.getIcon(user);
+        return ResultUtil.returnResult(user);
+    }
 }

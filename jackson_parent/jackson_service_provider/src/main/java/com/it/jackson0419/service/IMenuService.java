@@ -9,4 +9,5 @@ public interface IMenuService {
 
     List<Menu> getMenuList(User user);
 
+    User getIcon(User user);
 }
