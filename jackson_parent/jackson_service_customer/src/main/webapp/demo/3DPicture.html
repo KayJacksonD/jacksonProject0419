@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>旋转相册</title>
+    <link rel="stylesheet" href="../css/hovertree.css">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <!-- 引入ElementUI样式 -->
+    <link rel="stylesheet" href="../css/mycss.css">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <!-- 引入ElementUI组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+<body>
+<div id="app">
+    <!--<div class="hovertreeinfo">
+        <h2></h2>
+    </div>-->
+    <div class="wrap" @click="drawer = true">
+        <div class="cube">
+            <!--前面图片 -->
+            <div class="out_front">
+                <img src="../img/img01.jpg " class="pic"/>
+            </div>
+            <!--后面图片 -->
+            <div class="out_back">
+                <img src="../img/img02.jpg" class="pic"/>
+            </div>
+            <!--左图片 -->
+            <div class="out_left">
+                <img src="../img/img03.jpg" class="pic"/>
+            </div>
+            <div class="out_right">
+                <img src="../img/img04.jpg" class="pic"/>
+            </div>
+            <div class="out_top">
+                <img src="../img/img05.jpg" class="pic"/>
+            </div>
+            <div class="out_bottom">
+                <img src="../img/img06.jpg" class="pic"/>
+            </div>
+            <!--小正方体 -->
+            <span class="in_front">
+					<img src="../img/img07.jpg" class="in_pic"/>
+				</span>
+            <span class="in_back">
+					<img src="../img/img08.jpg" class="in_pic"/>
+				</span>
+            <span class="in_left">
+					<img src="../img/img09.jpg" class="in_pic"/>
+				</span>
+            <span class="in_right">
+					<img src="../img/img10.jpg" class="in_pic"/>
+				</span>
+            <span class="in_top">
+					<img src="../img/img11.jpg" class="in_pic"/>
+				</span>
+            <span class="in_bottom">
+					<img src="../img/img12.jpg" class="in_pic"/>
+				</span>
+        </div>
+    </div>
+    <!--<div>
+        <el-drawer
+                title="pictureList"
+                :visible.sync="drawer"
+                :with-header="false">
+            <span>pictureList</span>
+    </div>-->
+    <div class="block">
+        <el-carousel :interval="4000" type="card" height="350px">
+            <el-carousel-item v-for="item in 6" :key="item">
+                <h3 class="medium">{{ item }}</h3>
+            </el-carousel-item>
+        </el-carousel>
+    </div>
+</div>
+<!--<div>
+    <el-button @click="show3 = !show3">Click Me</el-button>
+
+    <div style="margin-top: 20px; height: 200px;">
+        <el-collapse-transition>
+            <div v-show="show3">
+                <div class="transition-box">el-collapse-transition</div>
+                <div class="transition-box">el-collapse-transition</div>
+            </div>
+        </el-collapse-transition>
+    </div>
+</div>-->
+</body>
+</html>
+<script>
+    var vue = new Vue({
+        el: "#app",
+        data: {
+            drawer: false,
+            visible: false
+        },
+        methods: {}
+    })
+</script>
+<script>
+    export default {
+        data: () = > ({
+        show3: true
+    })
+    }
+</script>
+
+<style>
+    .transition-box {
+        margin-bottom: 10px;
+        width: 200px;
+        height: 100px;
+        border-radius: 4px;
+        background-color: #409EFF;
+        text-align: center;
+        color: #fff;
+        padding: 40px 20px;
+        box-sizing: border-box;
+        margin-right: 20px;
+    }
+</style>
+<style>
+    .el-carousel__item h3 {
+        background: url("../img/backImg.jpg");
+        color: #475669;
+        font-size: 14px;
+        opacity: 0.75;
+        line-height: 200px;
+        margin: 0;
+    }
+
+    .el-carousel__item:nth-child(2n) {
+        background: url("../img/backImg.jpg");
+        background-color: #99a9bf;
+    }
+
+    .el-carousel__item:nth-child(2n+1) {
+        background: url("../img/backImg.jpg");
+        background-color: #d3dce6;
+    }
+</style>
