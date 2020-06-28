@@ -29,4 +29,9 @@ public class ResultUtil {
         resultVO.setData(data);
         return resultVO;
     }
+
+    public static ResultVO returnResult() {
+        ResultVO resultVO = new ResultVO();
+        return resultVO;
+    }
 }

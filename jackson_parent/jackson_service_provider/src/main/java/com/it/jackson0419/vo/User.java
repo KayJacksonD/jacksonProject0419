@@ -7,7 +7,7 @@ import java.util.List;
 
 @Data
 //@Table(name = "test2")
-public class User {
+public class User extends BaseVO {
     /*@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "userId")*/
@@ -19,7 +19,8 @@ public class User {
     private String cnName;
     private String enName;
     private String password;
-    private String icon;
+    private String userAccount;
+    private String icon;//头像
 
     //    @Column(name = "age")
     private int age;

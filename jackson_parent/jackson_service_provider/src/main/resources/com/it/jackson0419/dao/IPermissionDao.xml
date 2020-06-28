@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.it.jackson0419.dao.IPermissionDao">
+    <!--给指定用户赋予角色-->
+    <!--<insert id="addRoles1" parameterType="com.it.jackson0419.vo.Role">
+        <selectKey keyProperty="id" resultType="int" order="AFTER">
+            select last_insert_id()
+        </selectKey>
+        INSERT INTO user_role(userId,roleId)
+        VALUES(#{roleGivenUserId},#{roleId})
+    </insert>-->
+
+    <insert id="addRoles" parameterType="com.it.jackson0419.vo.Role" keyProperty="id" keyColumn="id"
+            useGeneratedKeys="true">
+        INSERT INTO user_role(userId,roleId)
+        VALUES
+        <foreach collection="vo.names" item="item" index="index" separator=",">
+            (
+            #{vo.roleGivenUserId},
+            #{item}
+            )
+        </foreach>
+    </insert>
+</mapper>
